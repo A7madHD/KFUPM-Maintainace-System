@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="description" content="KFUPM E-Maintenance System for students">
+    <meta name="author" content="Ahmad Ababtain, Amro Bahrawi, Hassan Almosalm">
+    <title>KFUPM E-Maintenance System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Icon.jpg" />
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="home.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="myJS.js"></script>
+
+</head>
+
+<body>
+    <nav style="height:15%" class="navbar navbar-expand  bg-success fixed-top">
+        <a class="navbar-brand" href="#"  onclick="$('#Services').show().siblings('div').hide();$('#searchbar').hide().siblings('div').show();">Home</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+            <li class="nav-item dropdown pt-2">
+                <a class="nav-brand dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Services</a>
+                <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#" onclick="$('#Services').show().siblings('div').hide();$('#searchbar').show().siblings('div').hide();">Search Services</a>
+                </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="$('#Login').show().siblings('div').hide();">Login </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="$('#Register').show().siblings('div').hide();">Register </a>
+            </li>
+
+        </ul>
+        <p style="color: whitesmoke">KFUPM E-Maintenance System</p>
+        <img style="width: 8%" src="logo.png">
+    </nav>
+
+    <div id="Login" onsubmit="login(); return false;" class="text-center h-100 w-100" style="display: none;">
+        <form class="form-signin">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+            <label for="kfupmId2" class="sr-only">Your Kfupm ID</label>
+            <input type="kfupmId2" id="kfupmId2" class="form-control" placeholder="Your KFUPM ID" required=""
+                autofocus="">
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" id="inputPassword2" class="form-control" placeholder="Password" required="">
+            <div class="checkbox mb-3">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-success btn-block" type="submit">Sign
+                in</button>
+            <p class="mt-5 mb-3 text-muted">© 363 Project</p>
+        </form>
+    </div>
+
+    <div onsubmit="register(); return false;" id="Register" class="text-center h-100 w-100" style="display: none;">
+        <form class="form-signin">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+            <input type="fn" id="fn" class="form-control" placeholder="Your first name" required="">
+            <input type="ln" id="ln" class="form-control" placeholder="Your last name" required="">
+            <input type="kfupmId" id="kfupmId" class="form-control" placeholder="Your KFUPM ID" required="">
+            <br>
+            <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required=""
+                autofocus="">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            <button class="btn btn-lg btn-success btn-block" type="submit">Signup</button>
+            <p class="mt-5 mb-3 text-muted">© 363 Project</p>
+        </form>
+    </div>
+
+    <div id="Services" class="container mt-1">
+
+        <div id="searchbar" class="input-group md-form form-sm form-2 pt-5 mb-2" style="display:none;">
+            <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+                <button class="btn btn-success" onclick="$('#searchbar').siblings().show();" type="submit">Go</button>
+            </div>
+        </div>
+
+        <div style="display:block">
+            <div class="card-deck">
+                <div class="card mt-1">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="conditioner.jpg" class="img-fluid" alt="Central Air Conditioning Problem" />
+                        <h1 class="card-title">Central Air Conditioner Problem</h1>
+                        <p class="card-text">Solving all the problems associated with your building's central air
+                            conditioner</p>
+                        <button type="button" class=" mt-auto btn btn-dark float-right" onclick="$('#Login').show().siblings('div').hide();">Request
+                            this Service</button>
+                    </div>
+                </div>
+
+                <div class="card mt-1">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="door.jpg" class="img-fluid" alt="Locked door" />
+                        <h1 class="card-title">Locked Doors</h1>
+                        <p class="card-text">If your dorm's door is locked, we can open it for you.</p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="$('#Login').show().siblings('div').hide();">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+
+                <div class="card mt-1">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="electricity.jpg" class="img-fluid" alt="Power Outage" />
+                        <h1 class="card-title">Power Outage Problems</h1>
+                        <p class="card-text">Solving all electricity problems. NOTE THAT POWER OUTAGES MIGHT HAPPEN
+                            INTENTIONALLY FROM THE UNIVERSITY FOR MAINTENANCE PURPOSES...So check your E-mails before
+                            requesting for power outages!</p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="$('#Login').show().siblings('div').hide();">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+
+                <div class="card mt-1">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="furniture.jpg" class="img-fluid" alt="Furniture" />
+                        <h1 class="card-title">Furniture Problems</h1>
+                        <p class="card-text">Solvig all furniture associated problems including:<br>
+                            1- Faulty light bulbs <br>
+                            2- Broken or falty desks or beds <br>
+                            3- Window does not open or close
+                        </p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="$('#Login').show().siblings('div').hide();">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+
+                <div class="card mt-1">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="plumbing.jpg" class="img-fluid" alt="plumbing" />
+                        <h1 class="card-title">plumbing Problems</h1>
+                        <p class="card-text">Solvig all plumbing associated problems including:<br>
+                            1- Water outage or shortage of water<br>
+                            2- No hot water <br>
+                            3- broken faucets or water pipes
+                        </p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="$('#Login').show().siblings('div').hide();">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

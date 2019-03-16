@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,  hrink-to-fit=yes">
+    <meta name="description" content="KFUPM E-Maintenance System for students">
+    <meta name="author" content="Ahmad Ababtain, Amro B hrawi, Hassan Almosalm">
+    <title>KFUPM E-Maintenance System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Icon.jpg" />
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="home.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="myJS.js"></script>
+
+</head>
+
+<body>
+    <nav style="height:15%" class="navbar navbar-expand  bg-success fixed-top">
+        <a class="navbar-brand" href="#" onclick="$('#generateR').show().siblings('div').hide();">Home</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item dropdown pt-2">
+                <a class="nav-brand dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Services</a>
+                <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#"
+                        onclick="$('#servCont').show().siblings('div').hide();$('#allServ').show().siblings('div').hide();">Browse
+                        Services</a>
+                    <a class="dropdown-item" href="#"
+                        onclick="$('#servCont').show().siblings('div').hide();$('#searchbar').show().siblings('div').hide();">Search
+                        Services</a>
+                    <a class="dropdown-item" href="#" onclick="$('#adminS').show().siblings('div').hide();">Modify
+                        Services</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="$('#pendingS').show().siblings('div').hide();">Assign service
+                    to
+                    staff</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="$('#generateR').show().siblings('div').hide();">Generate
+                    report</a>
+            </li>
+            <li class="nav-item dropdown pt-2 ml-2 mr-2">
+                <a class="nav-brand dropdown-toggle" href="#" id="dropdownId1" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Staff</a>
+                <div id="dropdown-menu1" class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#" onclick="$('#addStaff').show().siblings('div').hide();">Add
+                        staff</a>
+                    <a class="dropdown-item" href="#" onclick="$('#deleteStaff').show().siblings('div').hide();">Delete
+                        staff</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="$('#blockU').show().siblings('div').hide();">Block a user</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Logout</a>
+            </li>
+        </ul>
+        <p style="color: whitesmoke">KFUPM E-Maintenance System</p>
+        <img style="width: 8%" src="logo.png">
+    </nav>
+
+    <div onsubmit="addStaff(); return false;" id="addStaff" class="text-center w-100" style="display: none;">
+        <form class="form-signin" style="max-width:450px;">
+            <h1 class="h3 mb-3 font-weight-bold">Please fill the staff information to register him</h1>
+            <input type="fn" id="fn" class="form-control" placeholder="First name">
+            <input type="ln" id="ln" class="form-control" placeholder="Last name">
+            <input type="kfupmId" id="kfupmId" class="form-control" placeholder="KFUPM ID, for e.g t201548510">
+            <br>
+            <input type="phone" id="phone" class="form-control" placeholder="Phone number">
+            <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="">
+            <button class="btn btn-lg btn-success btn-block" type="submit">Add Staff</button>
+            <p class=" mb-3 text-muted">© 363 Project</p>
+        </form>
+    </div>
+
+
+    <div id="deleteStaff" class="container w-100" style="display:none;">
+        <h1 class="h3 mb-3 font-weight-bold text-center">Please choose the name of a staff to delete</h1>
+
+        <div class="list-group p-2">
+            <button onclick="deleteStaff(this);" id="s1" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s2" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s3" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s4" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s5" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s6" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s7" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s8" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s9" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s10" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s11" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s12" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s13" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s14" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s15" class="list-group-item list-group-item-action">Staff Name</button>
+            <button onclick="deleteStaff(this);" id="s16" class="list-group-item list-group-item-action">Staff Name</button>
+
+        </div>
+    </div>
+
+
+    <div id="pendingS" class="container w-100" style="display:none;">
+        <h1 class="h3 mb-3 font-weight-bold text-center">Please choose a service to assign it to a staff</h1>
+        <div class="list-group p-2">
+            <button onclick="pendingS(this,'a');" id="ser1" class="list-group-item list-group-item-action b1">Service
+                Name 1</button>
+            <button onclick="pendingS(this,'a');" id="ser2" class="list-group-item list-group-item-action b1">Service
+                Name 2</button>
+            <button onclick="pendingS(this,'a');" id="ser3" class="list-group-item list-group-item-action b1">Service
+                Name 3</button>
+            <button onclick="pendingS(this,'a');" id="ser4" class="list-group-item list-group-item-action b1">Service
+                Name</button>
+            <button onclick="pendingS(this,'a');" id="ser5" class="list-group-item list-group-item-action b1">Service
+                Name</button>
+            <button onclick="pendingS(this,'a');" id="ser6" class="list-group-item list-group-item-action b1">Service
+                Name</button>
+            <button onclick="pendingS(this,'a');" id="ser7" class="list-group-item list-group-item-action b1">Service
+                Name</button>
+            <button onclick="pendingS(this,'a');" id="ser8" class="list-group-item list-group-item-action b1">Service
+                Name</button>
+            <button onclick="pendingS(this,'a');" id="ser9" class="list-group-item list-group-item-action b1">Service
+                Name</button>
+        </div>
+    </div>
+
+    <div id="assignStaff" class="container w-100" style="display:none;">
+        <h1 class="h3 mb-3 font-weight-bold text-center">Please choose the name of a staff to assign service to him</h1>
+        <div class="list-group p-2">
+            <button onclick="assignS(this);" id="staf1" class="list-group-item list-group-item-action b1">Staff
+                Name 1</button>
+            <button onclick="assignS(this);" id="staf2" class="list-group-item list-group-item-action b1">Staff
+                Name 2</button>
+            <button onclick="assignS(this);" id="staf3" class="list-group-item list-group-item-action b1">Staff
+                Name 3</button>
+            <button onclick="assignS(this);" id="staf4" class="list-group-item list-group-item-action b1">Staff
+                Name</button>
+            <button onclick="assignS(this);" id="staf5" class="list-group-item list-group-item-action b1">Staff
+                Name</button>
+            <button onclick="assignS(this);" id="staf6" class="list-group-item list-group-item-action b1">Staff
+                Name</button>
+            <button onclick="assignS(this);" id="staf7" class="list-group-item list-group-item-action b1">Staff
+                Name</button>
+            <button onclick="assignS(this);" id="staf8" class="list-group-item list-group-item-action b1">Staff
+                Name</button>
+            <button onclick="assignS(this);" id="staf9" class="list-group-item list-group-item-action b1">Staff
+                Name</button>
+        </div>
+    </div>
+
+    <div id="servList" class="container w-100" style="display:none;">
+        <h1 class="h3 mb-3 font-weight-bold text-center">Please choose a service to delete</h1>
+        <div class="list-group p-2">
+            <button onclick="deleteServ(this);" id="serv1" class="list-group-item list-group-item-action b1">Service
+                Name</button>
+            <button onclick="deleteServ(this);" id="serv2" class="list-group-item list-group-item-action b1">Service
+                Name</button>
+            <button onclick="deleteServ(this);" id="serv3" class="list-group-item list-group-item-action b1">Service
+                Name</button>
+            <button onclick="deleteServ(this);" id="serv4" class="list-group-item list-group-item-action b1">Service
+                Name</button>
+            <button onclick="deleteServ(this);" id="serv5" class="list-group-item list-group-item-action b1">Service
+                Name</button>
+        </div>
+    </div>
+
+    <div onsubmit="addService(this); return false;" id="addNewServ" class="text-center w-100" style="display: none;">
+        <form class="form-signin" style="max-width:450px;">
+            <h1 class="h3 mb-3 font-weight-bold">Please fill service information to add it</h1>
+            <input type="tit" id="title" class="form-control" placeholder="Title for the service">
+            <input type="desc" id="description" class="form-control" placeholder="Description for the service">
+            <p class="pt-2">Upload Service Image:
+                <input type="file" class="file-uploader pull-left"></p>
+            <button class="btn btn-lg btn-success btn-block" type="submit">Add Service</button>
+            <p class=" mb-3 text-muted">© 363 Project</p>
+        </form>
+    </div>
+    <div id="adminS" class="container" style="display: none">
+        <div class="card-deck">
+            <div class="card ">
+                <div class=" d-flex flex-column card-body">
+                    <img src="admin-service.jpg" class="img-fluid" alt="Admin Services" />
+                    <button type="button" class="mt-auto btn btn-dark "
+                        onclick="$('#addNewServ').show().siblings('div').hide();">Add a new Service</button>
+                </div>
+            </div>
+
+            <div class="card ">
+                <div class=" d-flex flex-column card-body">
+                    <img src="admin-service.jpg" class="img-fluid" alt="Admin Services" />
+                    <button type="button" class="mt-auto btn btn-dark"
+                        onclick="$('#servList').show().siblings('div').hide();">Delete a Service</button>
+                </div>
+            </div>
+
+            <div class="card ">
+                <div class=" d-flex flex-column card-body">
+                    <img src="admin-service.jpg" class="img-fluid" alt="Admin Services" />
+                    <button type="button" class="mt-auto btn btn-dark "
+                        onclick="window.location = 'updateServ.html'; return false;">Update Service Info</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div onsubmit="generateR1(this); return false;" id="generateR1" class="text-center w-100" style="display: none;">
+        <form class="form-signin" style="max-width:450px;">
+            <h1 class="h3 mb-3 font-weight-bold">Service Requested Per Period report</h1>
+            <h1 for="sel1" class="h4 text-left  ">Select service:</h1>
+            <select class="form-control" id="sel1">
+                <option>service 1</option>
+                <option>service 2</option>
+                <option>service 3</option>
+                <option>service 4</option>
+                <option>service 5</option>
+            </select>
+            <h1 for="sel1" class="h4 text-left mt-2">Select the period:</h1>
+            <input type="date" id="from" class="form-control" placeholder="from">
+            <input type="date" id="to" class="form-control mb-5" placeholder="to">
+            <button class="btn btn-lg btn-success btn-block" type="submit">Generate Report</button>
+            <p class="mt-2 mb-3 text-muted">© 363 Project</p>
+        </form>
+    </div>
+    <div onsubmit="generateR2(this); return false;" id="generateR2" class="text-center w-100" style="display: none;">
+        <form class="form-signin" style="max-width:450px;">
+            <h1 class="h3 mb-3 font-weight-bold">Average time between requesting and closing for a specefic Service
+                Report</h1>
+            <h1 for="sel1" class="h4 text-left  ">Select service:</h1>
+            <select class="form-control mb-4" id="sel2">
+                <option>service 1</option>
+                <option>service 2</option>
+                <option>service 3</option>
+                <option>service 4</option>
+                <option>service 5</option>
+            </select>
+            <button class="btn btn-lg btn-success btn-block" type="submit">Generate Report</button>
+            <p class="mt-2 mb-3 text-muted">© 363 Project</p>
+        </form>
+    </div>
+    <div onsubmit="generateR3(this); return false;" id="generateR3" class="text-center w-100" style="display: none;">
+        <form class="form-signin" style="max-width:450px;">
+            <h1 class="h3 mb-3 font-weight-bold">Pending requests</h1>
+            <h1 for="sel1" class="h4 text-left  ">Select service:</h1>
+            <select class="form-control mb-4" id="sel3">
+                <option>service 1</option>
+                <option>service 2</option>
+                <option>service 3</option>
+                <option>service 4</option>
+                <option>service 5</option>
+            </select>
+            <button class="btn btn-lg btn-success btn-block" type="submit">Generate Report</button>
+            <p class="mt-2 mb-3 text-muted">© 363 Project</p>
+        </form>
+    </div>
+    <div onsubmit="generateR4(this); return false;" id="generateR4" class="text-center w-100" style="display: none;">
+        <form class="form-signin" style="max-width:450px;">
+            <h1 class="h3 mb-3 font-weight-bold">Closed request per period</h1>
+            <h1 for="sel1" class="h4 text-left  ">Select service:</h1>
+            <select class="form-control" id="sel4">
+                <option>service 1</option>
+                <option>service 2</option>
+                <option>service 3</option>
+                <option>service 4</option>
+                <option>service 5</option>
+            </select>
+            <h1 for="sel1" class="h4 text-left mt-2">Select the period:</h1>
+            <input type="date" id="from1" class="form-control" placeholder="from">
+            <input type="date" id="to1" class="form-control mb-5" placeholder="to">
+            <button class="btn btn-lg btn-success btn-block" type="submit">Generate Report</button>
+            <p class="mt-2 mb-3 text-muted">© 363 Project</p>
+        </form>
+    </div>
+
+    <div id="generateR" class="container">
+        <div class="card-deck">
+            <div class="card ">
+                <div class=" d-flex flex-column card-body">
+                    <img src="graph.png" class="img-fluid" alt="Admin Services" />
+                    <button type="button" class="mt-auto btn btn-dark "
+                        onclick="$('#generateR1').show().siblings('div').hide();">Services Requested per period</button>
+                </div>
+            </div>
+
+            <div class="card ">
+                <div class=" d-flex flex-column card-body">
+                    <img src="graph.png" class="img-fluid" alt="Admin Services" />
+                    <button type="button" class="mt-auto btn btn-dark"
+                        onclick="$('#generateR2').show().siblings('div').hide();">Average time between requesting and
+                        closing for a specefic Service</button>
+                </div>
+            </div>
+
+            <div class="card ">
+                <div class=" d-flex flex-column card-body">
+                    <img src="graph.png" class="img-fluid" alt="Admin Services" />
+                    <button type="button" class="mt-auto btn btn-dark"
+                        onclick="$('#generateR3').show().siblings('div').hide();">Pending requests</button>
+                </div>
+            </div>
+
+            <div class="card ">
+                <div class=" d-flex flex-column card-body">
+                    <img src="graph.png" class="img-fluid" alt="Admin Services" />
+                    <button type="button" class="mt-auto btn btn-dark"
+                        onclick="$('#generateR4').show().siblings('div').hide();">Closed request per period</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="servCont" class="container" style="display:none;">
+
+        <div id="searchbar" class="input-group md-form form-sm form-2 pt-5 ">
+            <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+                <button class="btn btn-success" onclick="$('#searchbar').siblings().show();" type="submit">Go</button>
+            </div>
+        </div>
+
+        <div id="allServ" style="display:none">
+            <div class="card-deck">
+                <div class="card ">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="conditioner.jpg" class="img-fluid" alt="Central Air Conditioning Problem" />
+                        <h1 class="card-title">Central Air Conditioner Problem</h1>
+                        <p class="card-text">Solving all the problems associated with your building's central air
+                            conditioner</p>
+                        <button type="button" class=" mt-auto btn btn-dark float-right" onclick="requestS(this)">Request
+                            this Service</button>
+                    </div>
+                </div>
+
+                <div class="card ">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="door.jpg" class="img-fluid" alt="Locked door" />
+                        <h1 class="card-title">Locked Doors</h1>
+                        <p class="card-text">If your dorm's door is locked, we can open it for you.</p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="requestS(this)">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+
+                <div class="card ">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="electricity.jpg" class="img-fluid" alt="Power Outage" />
+                        <h1 class="card-title">Power Outage Problems</h1>
+                        <p class="card-text">Solving all electricity problems. NOTE THAT POWER OUTAGES MIGHT HAPPEN
+                            INTENTIONALLY FROM THE UNIVERSITY FOR MAINTENANCE PURPOSES...So check your E-mails before
+                            requesting for power outages!</p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="requestS(this)">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+
+                <div class="card ">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="furniture.jpg" class="img-fluid" alt="Furniture" />
+                        <h1 class="card-title">Furniture Problems</h1>
+                        <p class="card-text">Solvig all furniture associated problems including:<br>
+                            1- Faulty light bulbs <br>
+                            2- Broken or falty desks or beds <br>
+                            3- Window does not open or close
+                        </p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="requestS(this)">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+
+                <div class="card ">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="plumbing.jpg" class="img-fluid" alt="plumbing" />
+                        <h1 class="card-title">plumbing Problems</h1>
+                        <p class="card-text">Solvig all plumbing associated problems including:<br>
+                            1- Water outage or shortage of water<br>
+                            2- No hot water <br>
+                            3- broken faucets or water pipes
+                        </p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="requestS(this)">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="blockU" class="container w-50" style="display:none;">
+        <div class="feedback">
+            <h1 class="h3 mb-3 font-weight-bold text-center">Please choose a user to block :</h1>
+            <div class="input-group md-form form-sm form-2 pt-5 ">
+                <input id ="searchUser" class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="btn btn-success" onclick="searchU();" type="submit">Go</button>
+                </div>
+            </div>
+            <div id="searchB" class="btn-group" data-toggle="buttons">
+                <label class="btn btn-success active">
+                    <input type="radio" name="buttons" value="byID" autocomplete="off" checked>By ID
+                </label>
+                <label class="btn btn-success">
+                    <input type="radio" name="buttons" value="byN" autocomplete="off">By name
+                </label>
+            </div>
+            <div class="form-group">
+                <label for="">Please add your reason to block the user:</label>
+                <textarea class="form-control" name="" id="textarea" rows="3"></textarea>
+            </div>
+            <button type="button" onclick="feedback();" class="btn btn-success">Confirm</button>
+        </div>
+    </div>
+</body>
+
+
+</html>

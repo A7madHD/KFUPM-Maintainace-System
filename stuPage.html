@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+    <meta name="description" content="KFUPM E-Maintenance System for students">
+    <meta name="author" content="Ahmad Ababtain, Amro Bahrawi, Hassan Almosalm">
+    <title>KFUPM E-Maintenance System</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Icon.jpg" />
+
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="bootstrap.css" rel="stylesheet">
+    <link href="home.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="myJS.js"></script>
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav style="height:15%" class="navbar navbar-expand  bg-success fixed-top">
+        <a class="navbar-brand" href="stuPage.html">Home</a>
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+            <li class="nav-item dropdown pt-2">
+                <a class="nav-brand dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">Services</a>
+                <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownId">
+                    <a class="dropdown-item" href="#" onclick="$('#searchbar').show().siblings('div').hide();">Search
+                        Services</a>
+                    <a class="dropdown-item" href="#" onclick="$('#pendingS').show().siblings('div').hide();">Track
+                        Services</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="UpdateP.html">Update Profile </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="$('#contact').show().siblings('div').hide();"> Contact us </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="index.html">Logout</a>
+            </li>
+        </ul>
+        <p style="color: whitesmoke">KFUPM E-Maintenance System</p>
+        <img style="width: 8%" src="logo.png">
+    </nav>
+
+    <div id="Services" class="container mt-1">
+
+        <div id="searchbar" class="input-group md-form form-sm form-2 pt-5 mb-2" style="display:none;">
+            <input class="form-control my-0 py-1 amber-border" type="text" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+                <button class="btn btn-success" onclick="$('#searchbar').siblings().show();" type="submit">Go</button>
+            </div>
+        </div>
+
+        <div style="display:block">
+            <div class="card-deck">
+                <div class="card mt-1">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="conditioner.jpg" class="img-fluid" alt="Central Air Conditioning Problem" />
+                        <h1 class="card-title">Central Air Conditioner Problem</h1>
+                        <p class="card-text">Solving all the problems associated with your building's central air
+                            conditioner</p>
+                        <button type="button" class=" mt-auto btn btn-dark float-right" onclick="requestS(this)">Request
+                            this Service</button>
+                    </div>
+                </div>
+
+                <div class="card mt-1">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="door.jpg" class="img-fluid" alt="Locked door" />
+                        <h1 class="card-title">Locked Doors</h1>
+                        <p class="card-text">If your dorm's door is locked, we can open it for you.</p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="requestS(this)">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+
+                <div class="card mt-1">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="electricity.jpg" class="img-fluid" alt="Power Outage" />
+                        <h1 class="card-title">Power Outage Problems</h1>
+                        <p class="card-text">Solving all electricity problems. NOTE THAT POWER OUTAGES MIGHT HAPPEN
+                            INTENTIONALLY FROM THE UNIVERSITY FOR MAINTENANCE PURPOSES...So check your E-mails before
+                            requesting for power outages!</p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="requestS(this)">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+
+                <div class="card mt-1">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="furniture.jpg" class="img-fluid" alt="Furniture" />
+                        <h1 class="card-title">Furniture Problems</h1>
+                        <p class="card-text">Solvig all furniture associated problems including:<br>
+                            1- Faulty light bulbs <br>
+                            2- Broken or falty desks or beds <br>
+                            3- Window does not open or close
+                        </p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="requestS(this)">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+
+                <div class="card mt-1">
+                    <div class=" d-flex flex-column card-body">
+                        <img src="plumbing.jpg" class="img-fluid" alt="plumbing" />
+                        <h1 class="card-title">plumbing Problems</h1>
+                        <p class="card-text">Solvig all plumbing associated problems including:<br>
+                            1- Water outage or shortage of water<br>
+                            2- No hot water <br>
+                            3- broken faucets or water pipes
+                        </p>
+                        <button type="button" class="mt-auto btn btn-dark float-right" onclick="requestS(this)">Request
+                            this
+                            Service</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="pendingS" class="container w-100" style="display:none;">
+            <h1 class="h3 mb-3 font-weight-bold text-center">Your pending Services</h1>
+            <div class="list-group p-2">
+                <button onclick="pendingS(this,'s');" id="ser1" class="list-group-item list-group-item-action b1">Service
+                    Name 1</button>
+                <button onclick="pendingS(this,'s');" id="ser2" class="list-group-item list-group-item-action b1">Service
+                    Name 2</button>
+                <button onclick="pendingS(this,'s');" id="ser3" class="list-group-item list-group-item-action b1">Service
+                    Name 3</button>
+                <button onclick="pendingS(this,'s');" id="ser4" class="list-group-item list-group-item-action b1">Service
+                    Name 4</button>
+                <button onclick="pendingS(this,'s');" id="ser5" class="list-group-item list-group-item-action b1">Service
+                    Name 5</button>
+            </div>
+        </div>
+
+        <div id="track" class="container" style="display:none;">
+            <h1 class="progressTitle" style="font-size:25px;">Progress of the Service</h1>
+
+            <div class="progress">
+                <div class="progress-bar " role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100">
+                </div>
+            </div>
+
+            <h2 class="progressText">Your Service was assigned to a staff member!</h2>
+
+            <div class="staffInfoDiv">
+                <h3 class="staffInfo">Your Staff Name: <span id="staffN">Amro Elbahrawy</span></h3>
+                <h4 class="staffInfo">Your staff ID: <span id="staffID">20474873</span></h4>
+            </div>
+
+            <div class="trackButton">
+                <button type="button" onclick="window.location = 'stuPage.html'"
+                    class=" btn btn-sm btn-success ">Confirm</button>
+                    <button type="button" id="cancleB" onclick="cancle(); return false;"
+                    class=" btn btn-sm btn-danger ">Cancle</button>
+            </div>
+        </div>
+
+        <div id="contact" class="w-50 m-auto" style="display:none;">
+            <div class="feedback">
+                <h1 class="h3 mb-3 font-weight-bold text-center">Please choose a service to comment on it:</h1>
+                <select class="form-control mb-2" id="sel1">
+                    <option>service 1</option>
+                    <option>service 2</option>
+                    <option>service 3</option>
+                    <option>service 4</option>
+                    <option>service 5</option>
+                </select>
+                <h1 class="h6">Staff Member Name: <span class="font-weight-normal" id="staffN1">Ahmad Ali</span></h1>
+                <h1 class="h6">Staff ID: <span class="font-weight-normal" id="staffID1">t2556456</span></h1>
+                <div class="form-group">
+                    <label for="">Please add your comment in the text area:</label>
+                    <textarea class="form-control" name="" id="textarea" rows="3"></textarea>
+                </div>
+                <button type="button" onclick="feedback();" class="btn btn-success">Confirm</button>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+            $('.progress-bar').each(function () {
+                var valueNow = $(this).attr('aria-valuenow');
+                $(this).animate({
+                    width: valueNow + '%',
+                    percent: 100
+                }, {
+                        progress: function (a, p, n) {
+                            $(this)
+                                .css('width', (valueNow * p + '%'))
+                                .html(Math.round(valueNow * p) + '%');
+                        }
+                    });
+            });
+            $("#cancleB").each(function(){if($('.progress-bar').attr('aria-valuenow')>50){
+                $(this).attr("disabled", "disabled")}
+            });
+        </script>
+</body>
+
+</html>
